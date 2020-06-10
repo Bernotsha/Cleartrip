@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+      .background{
+          background-color: whitesmoke;
+      }
+      .source{
+          padding:0px  250px;
+      }
+      .logo{
+          font-size: 23px;
+          color: gray;
+      }
+      .cleartrip{
+          font-size: 30px;
+          text-align: center;
+          color: blue;
+      }
+      .logo:hover{
+          color: black;
+      }
+      .active{
+          color: white;
+          background-color: black;
+      }
+      .dark{
+          font-weight: bolder;
+      }
+      body{
+          background-color: whitesmoke;
+      }
+      nav {
+  width: 25%;
+  height: 100%;
+  background: whitesmoke;
+  float: left;
+  }
+  article {
+    float: left;
+  margin-top: -1;
+  background-color: whitesmoke;
+  height: 100%;
+}
+
+.border1:hover{
+    border-style: ridge;
+    border-width: 0.5px;
+}
+.flex-container {
+  display: flex;
+  background-color:#d6eeec;
+  justify-content: start;
+  margin-left: -1;
+  border-right: none;
+  margin-top: -1;
+}
+
+.flex-container > div {
+  background-color:#d6eeec;
+  margin: 5px;
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
+
+}
+.flex-container1{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9f9f9;
+}
+.flex-container1>div{
+    color:black;
+    background-color: #f9f9f9;
+    margin:10px;
+    font-size: 10px;
+    text-align: center;
+}
+.flex-container1{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9f9f9;
+
+}
+.flex-container1>div{
+    color:black;
+    background-color: #f9f9f9;
+    margin:10px;
+    font-size: 12px;
+    text-align: center;
+}
+.darkblack{
+            color: black;
+            font-size: 18px;
+        }
+.footer1{
+    display: none;
+}
+.blackfont{
+    color: grey;
+    font-size: 12px;
+}
+.paragraph{
+    color: blue;
+    font-size: 13px;
+}
+.paragraph1{
+    color:black;
+    font-size: 10px;
+}
+.paragraph1:hover{
+    text-decoration: underline;
+}
+.paragraph:hover{
+    text-decoration: underline;
+}
+.button1{
+    color: white;
+    background-color: tomato;
+    border: none;
+}
+.button1:hover{
+    background-color: darkorange;
+}
+    .coupon{
+            color: #e62659;
+            background-color: #fde2e2;
+            padding: 8px;
+            font-size: 12px;
+        }
+        footer {
+background-color:whitesmoke;
+  padding: 20px;
+display: table-row;
+  color: black;}
+  body{
+      display: table;
+  }
+  @media screen and (max-width: 400px) {
+     header{
+         display: none;
+     }
+     nav{
+         display: none;
+     }
+     footer{
+         display: none;
+     }
+
+     article{
+         width: 100%;
+         
+     }
+    
+
+
+
+
+
+
+  </style>
+</head>
+
+<body> 
+<header>
+<div class="d-flex container-fluid">
+  <div class="d-flex  background text-black border  border-left-0">
+    <div class="p-3 background logo "><i style="color: coral;" class="fa fa-check-square-o"></i></div>
+    <div class="p-2 background border-left-0 text-center cleartrip">cleartrip</div>
+    <div class="p-3 background border border-top-0 border-bottom-0 logo"><i class="fa fa-plane"></i></div>
+    <div class="p-3 background border border-top-0 border-bottom-0 logo"><i class='fas fa-bed'></i></div>
+    <div class="p-3 background border border-top-0 border-bottom-0 logo"><i class="fa fa-train"></i></div>
+    <div class="pt-3 background border border-top-0 border-bottom-0 source">Bangalore-chennai</div>
+    <div class="p-3 background border border-top-0 border-bottom-0">Currency INR &#8377</div>
+    <div class="p-3 background border border-top-0 border-bottom-0 "><img src="india.png" class="rounded" height="20px" width="20px"><i class='fas fa-caret-down'></i></div>
+    <div class="p-3 background border border-top-0 border-bottom-0"><i class="fa fa-user-circle" style="font-size: 20px; padding: 5px;">  </i> Your tip<i class='fas fa-caret-down'></i></div>
+
+</div>
+</div>
+<div class="container-fluid">
+    <div class="d-flex background text-black border border-left-0">
+        <div class="pl-4 pt-2 pr-5 pb-2 "><button  class="btn btn-outline-secondary"><i class='fas fa-caret-right'></i>Modifysearch</button></div>
+        <div class="pl-5 pt-2 pb-2"><button  class="btn btn-outline-secondary active"><i class="fa fa-bars"></i> List</button></div>
+        <div class="pl-0 pt-2 pb-2 pr-5"><button  class="btn btn-outline-secondary"><i class='fas fa-calendar-alt'></i>  Calendar</button></div>
+        <div class="pl-5 pt-2 pb-2"><button  class="btn btn-outline-secondary active">All flights</button></div>
+        <div class="pl-0 pt-2 pb-2"><button  class="btn btn-outline-secondary">Non-stop  <span class="badge" style="background-color: chocolate; color: white;">19</span></button></div>
+
+  
+  </div>
+  </div>
+
+</header>
+<section class="d-flex">
+    <nav class="sticky-top">
+        <div class="d-flex flex-column ml-3 ">
+            <div class="p-2 border border-left-0">54 of 55 flights</div>
+            <div class="p-2 border border-left-0">Set a Frame alert</div>
+            <div class="p-2 border border-left-0"><i class="fas fa-caret-down"></i>  Price
+                <div class="p-1 pl-4">Up to &#8377 11,024</div>
+                <div class="d-flex pl-4 m-0 justify-content-between">
+                    <div >&#8377 2,943</div>
+                    <div class="mr-5">&#8377 2,943</div>
+                </div>
+            </div>
+            <div class="p-2 border border-left-0"><i class="fas fa-caret-down"></i>  Stops
+                <div class="d-flex p-3 pl-5">
+                    <div><button class="border p-2 active btn btn-outline-secondary">0 Stop</button></div>
+                    <div><button class="border p-2 pl-0">1 Stop</button></div>
+                </div>
+            </div>
+            <div class="p-2 border border-left-0"><i class="fas fa-caret-down"></i>  Departure time
+                <table class="table table-bordered mt-3 ">
+
+                    <tbody>
+                      <tr>
+                        <td>Early Morning</td>
+                        <td>12am-8am</td>
+                      </tr>
+                      <tr>
+                        <td>Morning</td>
+                        <td>8am-12pm</td>
+                      </tr>
+                      <tr>
+                        <td>Mid-day</td>
+                        <td>12pm-4pm</td>
+                      </tr>
+                      <tr>
+                        <td>Evening</td>
+                        <td>4pm-8pm</td>
+                      </tr>
+                      <tr>
+                        <td>Night</td>
+                        <td>8pm-12am</td>
+                      </tr>
+       
+
+                    </tbody>
+                  </table>
+            
+          </div>
+          <div class="p-2 border border-left-0"><i class="fas fa-caret-down"></i>  Stops
+            <div class="p-3">
+            <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" checked>Show multi-arline itineraries
+                </label>
+              </div>
+              <div class="form-check pt-2">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" checked>Air Asia
+                </label>
+              </div>
+              <div class="form-check pt-1">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" checked>Air India
+                </label>
+              </div>
+              <div class="form-check pt-1">
+                <label class="form-check-labe2">
+                  <input type="checkbox" class="form-check-input" value="" checked>GoAir
+                </label>
+              </div>
+              <div class="form-check pt-1">
+                <label class="form-check-labe3">
+                  <input type="checkbox" class="form-check-input" value="" checked>IndiGo
+                </label>
+              </div>
+              <div class="form-check pt-1">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" checked>SpiceJet
+                </label>
+              </div>
+              <div class="form-check pt-1">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" checked>Vistara
+                </label>
+              </div>
+              </div>
+        </div>
+        <div class="p-2 border border-left-0"><i class="fas fa-caret-right"></i>  Trip duration</div>
+        <div class="p-2 border border-left-0"><i class="fas fa-caret-right"></i>  Layover duration</div>
+
+
+
+    </nav>
+    <article class="border">
+        <div class="d-flex coupon">Flights Deal:Get upto Rs. 1500 Instant Cashback</div>
+
+        <div class="flex-container d-flex">
+            <div>
+                <div><i class='fas fa-caret-left'></i></div>
+            </div>
+            <div class="d-flex flex-column pl-4 border1"> 
+                <div>Wed,15 Jul</div>
+                <div>&#8377 2,493</div>
+            </div>
+            <div class="d-flex flex-column pl-3 border1">
+                <div>Thu, 16 Jul</div>
+                <div>&#8377 2,493</div>
+            </div>
+            <div class="d-flex flex-column pl-3 border1">
+                <div>Thu, 16 Jul</div>
+                <div>&#8377 2,493</div>
+            </div>
+            <div class="d-flex flex-column pl-3 border1">
+                <div>Thu, 16 Jul</div>
+                <div>&#8377 2,493</div>
+            </div>
+            <div class="d-flex flex-column pl-3 border1">
+                <div>Thu, 16 Jul</div>
+                <div>&#8377 2,493</div>
+            </div>
+            <div class="d-flex flex-column pl-3 border1">
+                <div>Thu, 16 Jul</div>
+                <div>&#8377 2,493</div>
+            </div>
+            <div class="d-flex flex-column pl-3 border1">
+                <div>Thu, 16 Jul</div>
+                <div>&#8377 2,493</div>
+            </div>
+            <div>
+                <div><i class='fas fa-caret-right pl-2'></i></div>
+            </div>
+        </div>
+        <div class="flex-container1 border navbar navbar-expand-sm navbar-dark sticky-top">
+            <div><a href="#">Airline</a></div>
+            <div><a href="#">Depart</a></div>
+            <div><a href="#">Duration</a></div>
+            <div><a href="#">Prize</a></div>
+        </div>
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+        <div class="d-flex coupon"><button class="border p-0 pl-2 pr-2" style="background-color:coral; color: white;">Deal</button> Get upto Rs.1500 Instant Cashback.Use coupon : CT2020</div>
+        <div class="flex-container1">
+            <div class=" d-flex flex-column">
+                <div><img class="image1" src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px">
+                </div>
+                <div class="blackfont">Airasia</div>
+            </div>
+            <div class=" d-flex flex-column">
+                <div class="darkblack">06:50</div>
+                <div class="blackfont p-1">BLR->MAA</div>
+                <div class="paragraph p-1">Flight itinerary</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">07:55</div>
+                <div class="p-1 blackfont">-</div>
+                <div class="paragraph p-1">Fare rules</div>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="darkblack">1h 5m</div>
+                <div class="blackfont p-1">non-stop</div>
+                <div class="paragraph p-1" >Baggage Information</div>
+            </div>
+            <div class="d-flex flex-column"> 
+                
+                <div style="font-size: 15px;"> &#8377 2,493</div>
+                <div class="mt-2"><Button class="border p-2 pl-3 pr-3 button1">Book</Button></div>
+            </div>
+        </div>
+
+
+
+
+
+    </article>
+    <calendar d-flex flex-column>
+        <div class="ml-5">Flexible with Dates</div>
+
+        <div class="container m-3 ml-5">
+            <div class="row">
+                <div class="span12">
+                    <table class="table-condensed table-bordered table-striped">
+                        <thead>
+                            <tr>
+                              <th colspan="7">
+                                <span class="btn-group">
+                                    <a class="btn"><i class="icon-chevron-left"></i></a>
+                                    <a class="btn">February 2012</a>
+                                    <a class="btn"><i class="icon-chevron-right"></i></a>
+                                </span>
+                              </th>
+                            </tr>
+                            <tr>
+                                <th>Su</th>
+                                <th>Mo</th>
+                                <th>Tu</th>
+                                <th>We</th>
+                                <th>Th</th>
+                                <th>Fr</th>
+                                <th>Sa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="muted">29</td>
+                                <td class="muted ">30</td>
+                                <td class="muted ">31</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td class="btn-primary"><strong>20</strong></td>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                                <td class="muted">1</td>
+                                <td class="muted">2</td>
+                                <td class="muted">3</td>
+                            </tr>
+                            <tr>
+                                <td colspan="7" style="font-size: 10px; background-color: rgb(243, 217, 237);"> 
+                                    Flight prices change frequently as per availability.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="d-flex flex-column container-fluid border footer1">
+    <div class="d-flex ml-3">
+        <div class="d-flex paragraph">About Us</div>
+        <div class="ml-3 paragraph">Careers</div>
+        <div class="ml-3 paragraph">FAQs</div>
+        <div class="ml-3 paragraph">Support</div>
+        <div class="ml-3 paragraph">Blog</div>
+        <div class="ml-3 paragraph">Mobile</div>
+        <div class="ml-3 paragraph">Collections</div>
+        <div class="ml-3 paragraph">Cleartrip for Business</div>
+        <div class="ml-3 paragraph">Giftcards</div>
+        <div class="ml-3 paragraph">Referal program</div>
+        <div class="ml-3 paragraph">Holiday planner</div>
+        <div class="ml-5" style="color: grey;">connect</div>
+        <div class="ml-2"><i class="fa fa-facebook-official" style="font-size:20px;"></i></div>
+        <div class="ml-2"><a href="#" class="fa fa-twitter"></a></div>
+    </div>
+    <div class="d-flex ml-3">
+        <div class="d-flex paragraph1">Cleartrip Pvt.Ltd</div>
+        <div class="ml-3 paragraph1">Privacy</div>
+        <div class="ml-2 paragraph1">Security</div>
+        <div class="ml-2 paragraph1">Terms of use</div>
+    </div>
+
+</footer>
+
+
+</body>
+</html>
