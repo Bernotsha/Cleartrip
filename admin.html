@@ -1,0 +1,318 @@
+<html>
+    <head>
+        <title>Admin</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+    .container {
+        margin:0 auto; /* this will center the page */
+        width:1000px; /*  use your width here */
+        }
+    .logo{
+          font-size: 30px;
+          color: rgb(31, 8, 92);
+          font-weight: bold;
+        }
+    .book{
+          font-size: 30px;
+          font-weight: lighter;
+          color: gray;
+        }
+        td {
+  padding: 5px;
+  white-space: nowrap;
+}
+        th{
+            font-weight:600;
+            background-color: rgba(11, 85, 134, 0.705);
+            color: white; 
+            padding-left: 5px;       }
+
+        body{
+            background-color: whitesmoke;
+        }
+    </style>
+
+    <body onload="tableFromJson()">
+        <div class="container bg-white">
+            <div class="d-flex " style="white-space: nowrap;">
+              <div class="pt-3 logo mr-5  "><img src="cleartripicon.png" height="20px">cleartrip</div>
+                <div class="p-3 ml-5 book" style="white-space: nowrap;">Booking details</div>
+            </div>
+
+                <div class="mt-5"><h5>Delhi-Chennai</h5></div>
+                <div id="Hello"></div>
+                <h5 class="mt-5">Salem-Chennai</h5>
+                <div class="mb-5" id="Hello1"></div>
+                <h5 class="mt-5">Bangalore-Chennai</h5>
+                <div class="mb-5 pb-4" id="Hello2"></div>
+                <script>
+                    function tableFromJson() {
+                        var index=localStorage.getItem("x");
+                        var x=0;
+                    
+                        var body = document.getElementById("Hello");
+                        var body1=document.getElementById("Hello1");
+                        var body2=document.getElementById("Hello2");
+                        var tbl = document.createElement("table");
+                        var tb2=document.createElement("table");
+                        var tb3=document.createElement("table");
+                        var tblBody = document.createElement("tbody");
+                        var tb2Body = document.createElement("tbody");
+                        var tb3Body = document.createElement("tbody");
+                        var index=parseInt(index);
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="Name";
+                        tblBody.appendChild(headercell1);
+
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="Age";
+                        tblBody.appendChild(headercell1);
+
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="Address";
+                        tblBody.appendChild(headercell1);
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="Mobile";
+                        tblBody.appendChild(headercell1);
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="E-mail";
+                        tblBody.appendChild(headercell1);
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="Price";
+                        tblBody.appendChild(headercell1);
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="Date";
+                        tblBody.appendChild(headercell1);
+
+                        var headercell1 = document.createElement("TH");
+                        headercell1.innerHTML="Time";
+                        tblBody.appendChild(headercell1);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="Name";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="Age";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="Address";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="Mobile";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="E-mail";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="Price";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="Date";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell2 = document.createElement("TH");
+                        headercell2.innerHTML="Time";
+                        tb2Body.appendChild(headercell2);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="Name";
+                        tb3Body.appendChild(headercell3);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="Age";
+                        tb3Body.appendChild(headercell3);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="Address";
+                        tb3Body.appendChild(headercell3);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="Mobile";
+                        tb3Body.appendChild(headercell3);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="E-mail";
+                        tb3Body.appendChild(headercell3);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="Price";
+                        tb3Body.appendChild(headercell3);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="Date";
+                        tb3Body.appendChild(headercell3);
+
+                        var headercell3 = document.createElement("TH");
+                        headercell3.innerHTML="Time";
+                        tb3Body.appendChild(headercell3);
+                        
+
+
+                        
+
+                        for (var i = 0; i < index+1; i++) {
+                        var m=JSON.parse( localStorage.getItem(i));
+
+
+
+                        
+                        if(m.travel=="Delhi-Chennai")
+                        {
+                        var row = document.createElement("tr");
+                        var cell1 = document.createElement("td");
+                        var cell2 = document.createElement("td");
+                        var cell3 = document.createElement("td");
+                        var cell4 = document.createElement("td");
+                        var cell5 = document.createElement("td");
+                        var cell6 = document.createElement("td");
+                        var cell7 = document.createElement("td");
+                        var cell8 = document.createElement("td");
+
+                        
+                        var name = document.createTextNode(m.name);
+                        var age = document.createTextNode(m.age);
+                        var address=document.createTextNode(m.address);
+                        var mobile=document.createTextNode(m.mobile);
+                        var email=document.createTextNode(m.email);
+                        var price=document.createTextNode(m.price);
+                        var date=document.createTextNode(m.date);
+                        var time=document.createTextNode(m.time);
+                        cell1.appendChild(name);
+                        cell2.appendChild(age);
+                        cell3.appendChild(address);
+                        cell4.appendChild(mobile);
+                        cell5.appendChild(email);
+                        cell6.appendChild(price);
+                        cell7.appendChild(date);
+                        cell8.appendChild(time);
+                        row.appendChild(cell1);
+                        row.appendChild(cell2);
+                        row.appendChild(cell3);
+                        row.appendChild(cell4);
+                        row.appendChild(cell5);
+                        row.appendChild(cell6);
+                        row.appendChild(cell7);
+                        row.appendChild(cell8);
+                        tblBody.appendChild(row);
+                        }
+                        else if(m.travel=="Salem-Chennai"){
+                        var row = document.createElement("tr");
+                        var cell1 = document.createElement("td");
+                        var cell2 = document.createElement("td");
+                        var cell3 = document.createElement("td");
+                        var cell4 = document.createElement("td");
+                        var cell5 = document.createElement("td");
+                        var cell6 = document.createElement("td");
+                        var cell7 = document.createElement("td");
+                        var cell8 = document.createElement("td");
+
+                        
+                        var name = document.createTextNode(m.name);
+                        var age = document.createTextNode(m.age);
+                        var address=document.createTextNode(m.address);
+                        var mobile=document.createTextNode(m.mobile);
+                        var email=document.createTextNode(m.email);
+                        var price=document.createTextNode(m.price);
+                        var date=document.createTextNode(m.date);
+                        var time=document.createTextNode(m.time);
+                        cell1.appendChild(name);
+                        cell2.appendChild(age);
+                        cell3.appendChild(address);
+                        cell4.appendChild(mobile);
+                        cell5.appendChild(email);
+                        cell6.appendChild(price);
+                        cell7.appendChild(date);
+                        cell8.appendChild(time);
+                        row.appendChild(cell1);
+                        row.appendChild(cell2);
+                        row.appendChild(cell3);
+                        row.appendChild(cell4);
+                        row.appendChild(cell5);
+                        row.appendChild(cell6);
+                        row.appendChild(cell7);
+                        row.appendChild(cell8);
+                        tb2Body.appendChild(row);
+                        }
+                        else if(m.travel=="Bangalore-Chennai"){
+                        var row = document.createElement("tr");
+                        var cell1 = document.createElement("td");
+                        var cell2 = document.createElement("td");
+                        var cell3 = document.createElement("td");
+                        var cell4 = document.createElement("td");
+                        var cell5 = document.createElement("td");
+                        var cell6 = document.createElement("td");
+                        var cell7 = document.createElement("td");
+                        var cell8 = document.createElement("td");
+
+                        
+                        var name = document.createTextNode(m.name);
+                        var age = document.createTextNode(m.age);
+                        var address=document.createTextNode(m.address);
+                        var mobile=document.createTextNode(m.mobile);
+                        var email=document.createTextNode(m.email);
+                        var price=document.createTextNode(m.price);
+                        var date=document.createTextNode(m.date);
+                        var time=document.createTextNode(m.time);
+                        cell1.appendChild(name);
+                        cell2.appendChild(age);
+                        cell3.appendChild(address);
+                        cell4.appendChild(mobile);
+                        cell5.appendChild(email);
+                        cell6.appendChild(price);
+                        cell7.appendChild(date);
+                        cell8.appendChild(time);
+                        row.appendChild(cell1);
+                        row.appendChild(cell2);
+                        row.appendChild(cell3);
+                        row.appendChild(cell4);
+                        row.appendChild(cell5);
+                        row.appendChild(cell6);
+                        row.appendChild(cell7);
+                        row.appendChild(cell8);
+                        tb3Body.appendChild(row);
+                        }
+                        }
+
+
+// put the <tbody> in the <table>
+tbl.appendChild(tblBody);
+tb2.appendChild(tb2Body);
+tb3.appendChild(tb3Body);
+// appends <table> into <body>
+body.appendChild(tbl);
+body1.appendChild(tb2);
+body2.appendChild(tb3);
+// sets the border attribute of tbl to 2;
+tbl.setAttribute("border", "1");
+tbl.setAttribute("width", "100%");
+tb2.setAttribute("border", "1");
+tb2.setAttribute("width", "100%");
+tb3.setAttribute("border", "1");
+tb3.setAttribute("width", "100%");
+      
+}
+                </script>    
+        </div>
+    </body>
+</html>
