@@ -11,6 +11,58 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
+    <script type="text/javascript">
+    function jsonfuntion()
+    {
+      var x;
+      var y=localStorage.getItem("x");
+      if(y==null)
+      {
+        localStorage.setItem("x",0);
+        x=localStorage.getItem("x");
+      }
+      else
+      {
+        y=parseInt(y);
+        localStorage.setItem("x",y+1);
+        x=localStorage.getItem("x");
+        
+      }
+      var travel=sessionStorage.getItem("travel1");
+      var email1=document.getElementById("email").value;
+      var name1 = document.getElementById("name").value;
+      var age1=document.getElementById("age").value;
+      var address1=document.getElementById("address").value;
+      var mobile1=document.getElementById("mobile").value;
+      var price1=sessionStorage.getItem("price");
+      var currentdate=new Date();
+      var date1=currentdate.getDate()+"-"+currentdate.getMonth()+"-"+currentdate.getFullYear();
+      var time1=currentdate.getHours()+":"+currentdate.getMinutes();
+      var details={
+        name:name1,
+        age:age1,
+        address:address1,
+        mobile:mobile1,
+        email:email1,
+        price:price1,
+        time:time1,
+        date:date1,
+        travel:travel1
+
+      }
+      var s=x.toString();
+      localStorage.setItem(s,JSON.stringify(details));
+      var m=JSON.parse( localStorage.getItem(s));
+      var t=JSON.stringify(m);
+
+      document.getElementById("name").value="";
+      document.getElementById("age").value="";
+      document.getElementById("address").value="";
+      document.getElementById("mobile").value="";
+      document.getElementById("email").value="";
+
+    }
+    </script>
     <style>
     .container {
         margin:0 auto; /* this will center the page */
@@ -81,11 +133,17 @@
     .font12{
       font-size: 12px;
     }
+    input[type=text] {
+  padding: 10px;
+}
     .ton{
       background-color: coral;
     }
     .ton:hover{
       background-color: rgb(236, 146, 124);
+    }
+    .bgwhite{
+      background-color: white;
     }
     @media screen and (max-width: 400px) {
       .container {
@@ -100,8 +158,8 @@
         <body>
             <div class="container">
               <div class="d-flex">
-                <div class="p-3 logo mr-5 "><img src="cleartripicon.png" height="20px">cleartrip</div>
-                  <div class="p-3 ml-5 book">Book in four simple steps</div>
+                <div class="p-3 logo mr-5 " style="white-space: nowrap;"><img src="cleartripicon.png" height="20px">cleartrip</div>
+                  <div class="p-3 ml-5 book" style="white-space: nowrap;" >Book in four simple steps</div>
               </div>
               <div class="d-flex justify-content-between background p-3">
                   <div style="font-weight: bold;">
@@ -121,10 +179,13 @@
                     </div>
                     
                   </div>
+
                   <div class="d-flex">
-                    <div class="ml-5" ><h3>Bangalore-chennai</h3></div>
-                    <div class="pl-2 p-2" style="color: gray; font-weight:normal;"><h5>Saturday 18 Jul 2020</h5></div>
+                    <div class="ml-5" ><h3><span id="travel"><span></h3></div>
+
+                    <div class="pl-2 p-2" style="color: gray; font-weight:normal;"><h5>Saturday 13 Jun 2020</h5></div>
                   </div>
+                  
                   <div class="d-flex  ml-5 mb-4 pb-4 border border-top-0 border-left-0 border-right-0 " style="width: 700px auto;">
                       <div class="d-flex flex-column justify-content-center">
                         <div><img src="airasiaicon.png" alt="imagenotfount" width="30px" height="30px"></div>
@@ -135,19 +196,19 @@
                         <div class=" font">Economy</div>
                     </div>
                       <div class="d-flex flex-column text-right p-2 pl-4 pt-3">
-                        <div class="time">BLR 06:50</div>
-                        <div>Sat, 18 Jul, 2020</div>
+                        <div class="time"><span id="source"></span></div>
+                        <div>Sat, 13 Jun, 2020</div>
                         <div class="font">kempegowda International</div>
                         <div class="font">Ariport, Bangalore</div>
                       </div>
                       <div class="d-flex flex-column text-center p-2 pl-4 pt-3">
                         <div class="time"><i class="fa fa-clock-o" style="font-size: 35px;"></i></div>
-                        <div>1h 5m</div>
+                        <div><span id="time"></span></div>
      
                       </div>
                       <div class="d-flex flex-column justify-content-flex-end p-2 pl-4 pt-3">
-                        <div class="time">07:55 MAA</div>
-                        <div>Sat, 18 Jul, 2020</div>
+                        <div class="time"><span id="destination"></span></div>
+                        <div>Sat, 13 Jun, 2020</div>
                         <div class="font">Chennai Airport, Chennai</div>
                         
                       </div>
@@ -160,13 +221,14 @@
                       </div>
 
                   </div>
+
                   <div class="d-flex  ml-5 mb-4 pb-4 border border-top-0 border-left-0 border-right-0 " style="width: 700px auto;">
                     <div class="d-flex flex-column ml-4">
                       <div class="ml-2">Choose fare</div>
                     </div>
                     <div class="d-flex flex-column bg-primary text-white ml-5 p-2">
                       <div class="fontbox">Standard Fare</div>
-                      <div> &#8377 2,493</div>
+                      <div> &#8377 <span id="price"></span> </div>
                       <div class="white pt-2 pb-2">Date change fees:</div>
                       <div class="white">Airline fee upto 3,000</div>
                       <div class="white">Cleartrip fee upto 200</div>
@@ -176,12 +238,13 @@
                     </div>
                     <div class="d-flex flex-column ml-3 p-2 border">
                       <div class="">Flexify</div>
-                      <div> &#8377 2,792</div>
+                      <div> &#8377 <span id="price1"></span> </div>
                       <div class=" pt-2 pb-2">Date change fees:</div>
                       <div class=""><del>Airline fee upto 3,000</del></div>
                       <div class=""><del>Cleartrip fee upto 200</del></div>
                       <div class="pt-2x"><a href="#"  class="">know more</a></div>
                     </div>
+
                     <div class="d-flex flex-column ml-0 pl-3  ">
                       
                     
@@ -249,7 +312,7 @@
                 <div class="d-flex flex-column ml-4">
                   <div class="font">Have a coupon code or gift card to redeem?</div>
                   <div class="d-flex pt-2">
-                    <input type="text" style="font-size: 15px;" value="Enter Your Code / Card Number" size="40"> 
+                    <input type="text" style="font-size: 15px;" placeholder="Enter Your Code / Card Number" size="40"> 
                     <button class=" pl-5 pr-5 apply" style="border-width: 1px;">Apply</button>
                   </div>
                 </div>
@@ -263,7 +326,7 @@
                 <div class="d-flex flex-column ml-4">
                   <div class="font">Redeem existing points Also earn 24 points with this booking</div>
                   <div class="d-flex pt-2">
-                    <input type="text" style="font-size: 15px;" value="Enter PAYBACK Card/Mobile No." size="40"> 
+                    <input type="text" style="font-size: 15px;" placeholder="Enter PAYBACK Card/Mobile No." size="40"> 
                     <button class=" pl-5 pr-5 apply" style="border-width: 1px;">Apply</button>
                   </div>
                   <div class="pt-2"><img src="payback.png" width="60" height="30">  <a href="#" style="font-size:15px ;">Know more</a> </div>
@@ -276,10 +339,24 @@
                   <div class="pl-5">Total</div>
                 </div>
                 <div class="ml-4 flex-column mr-5">
-                  <div class="ml-2"> &#8377 2,493</div>
+                  <div class="ml-2"> &#8377 <span id="price2"></span></div>
                   <div class="ml-2">1 adult <a href="#"> (fare details)</a></div>
-                  <div class="mt-5"><button class=" text-white ton">Continue booking</button></div>
+                  
                 </div>
+                <script type="text/javascript">
+                  var travel1=sessionStorage.getItem("travel1");
+                  var source=sessionStorage.getItem("source");
+                  var destination=sessionStorage.getItem("destination");
+                  var time=sessionStorage.getItem("time");
+                  var price=sessionStorage.getItem("price")
+                  document.getElementById("travel").innerHTML=travel1;
+                  document.getElementById("source").innerHTML=source;
+                  document.getElementById("time").innerHTML=time;
+                  document.getElementById("destination").innerHTML=destination;
+                  document.getElementById("price").innerHTML=price;
+                  document.getElementById("price1").innerHTML=price;
+                  document.getElementById("price2").innerHTML=price;
+                </script>
                 <div class="ml-5 flex-column">
                   <div class="flex-column ml-0">
                   <div class="ml-4"><span class="badge badge-success">Partially Refundable</span></div>
@@ -296,12 +373,23 @@
                 </div>
                </div> 
            
-               <div class="d-flex justify-content-between p-3 border background1">
+               <div class="d-flex justify-content-between p-3 bgwhite">
+                <div class="d-flex flex-column">
                 <div style="font-weight: bold;"><span class="badge badge-primary p-2">2</span>  Email address</div>
-                <div class="review">Where do you want the ticket?</div>
+                <div class="p-4"><input type="text" size="50" name="email" placeholder="Enter your email" id="email"></div>
                 </div>
-                <div class="d-flex justify-content-between p-3 border background1">
+                <div class="review">Where do you want the ticket?</div>
+ 
+                </div>
+                <div class="d-flex justify-content-between p-3 border bgwhite">
+                  <div class="d-flex flex-column">
                   <div style="font-weight: bold;"><span class="badge badge-primary p-2">3</span> Travellers</div>
+                  <div class="p-4"><input type="text" size="50" name="namebox" placeholder="Name" id="name" required></div>
+                  <div class="pb-4 pl-4 pt-0"><input type="text" size="50" name="namebox" id="age" placeholder="Age" ></div>
+                  <div class="pb-4 pl-4 pt-0"><input type="text" size="50" name="address" id="address" placeholder="Address" required></div>
+                  <div class="pb-4 pl-4 pt-0"><input type="text" size="50" name="mobile" id="mobile" placeholder="Mobile" pattern="[1-9]{1}[0-9]{9}" ></div>
+                  <div class="mt-4 ml-4 mb-4"><a href="admin.html"> <button class=" text-white ton" onclick="jsonfuntion()">Continue booking</button></a></div>
+                  </div>
                   <div class="review">Tell us who's travelling</div>
                   </div>
                   <div class="d-flex justify-content-between p-3 border background1">
